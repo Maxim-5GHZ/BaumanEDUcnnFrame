@@ -1,8 +1,0 @@
-[
-{
-  "directory": "/home/maxim/Рабочий стол/CNN/BaumanEDUcnnFrame/build",
-  "command": "/usr/bin/clang++-18  -I\"/home/maxim/Рабочий стол/CNN/BaumanEDUcnnFrame\" -O3 -DNDEBUG -std=c++17 -Wall -Wextra -Wpedantic -o CMakeFiles/learnCNN.dir/learnCNN.cpp.o -c \"/home/maxim/Рабочий стол/CNN/BaumanEDUcnnFrame/learnCNN.cpp\"",
-  "file": "/home/maxim/Рабочий стол/CNN/BaumanEDUcnnFrame/learnCNN.cpp",
-  "output": "CMakeFiles/learnCNN.dir/learnCNN.cpp.o"
-}
-]

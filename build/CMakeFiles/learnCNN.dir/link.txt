@@ -1,1 +1,0 @@
-/usr/bin/clang++-18 -O3 -DNDEBUG CMakeFiles/learnCNN.dir/learnCNN.cpp.o -o learnCNN 
