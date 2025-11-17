@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/cnn_suite.dir/main.cpp.o CMakeFiles/cnn_suite.dir/mnist_app.cpp.o -o cnn_suite  ../src/libcnn_lib.a -lcurses /usr/lib/x86_64-linux-gnu/libform.so 

@@ -1,1 +1,0 @@
-/usr/bin/clang++-18 -g CMakeFiles/cnn_suite.dir/main.cpp.o CMakeFiles/cnn_suite.dir/DQNAgent.cpp.o -o cnn_suite  -lcurses /usr/lib/x86_64-linux-gnu/libform.so 

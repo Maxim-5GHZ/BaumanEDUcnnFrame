@@ -162,6 +162,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named cnn_lib
+
+# Build rule for target.
+cnn_lib: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cnn_lib
+.PHONY : cnn_lib
+
+# fast build rule for target.
+cnn_lib/fast:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/cnn_lib.dir/build.make src/CMakeFiles/cnn_lib.dir/build
+.PHONY : cnn_lib/fast
+
+#=============================================================================
 # Target rules for targets named cnn_suite
 
 # Build rule for target.
@@ -171,56 +184,8 @@ cnn_suite: cmake_check_build_system
 
 # fast build rule for target.
 cnn_suite/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cnn_suite.dir/build.make CMakeFiles/cnn_suite.dir/build
+	$(MAKE) $(MAKESILENT) -f app/CMakeFiles/cnn_suite.dir/build.make app/CMakeFiles/cnn_suite.dir/build
 .PHONY : cnn_suite/fast
-
-DQNAgent.o: DQNAgent.cpp.o
-.PHONY : DQNAgent.o
-
-# target to build an object file
-DQNAgent.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cnn_suite.dir/build.make CMakeFiles/cnn_suite.dir/DQNAgent.cpp.o
-.PHONY : DQNAgent.cpp.o
-
-DQNAgent.i: DQNAgent.cpp.i
-.PHONY : DQNAgent.i
-
-# target to preprocess a source file
-DQNAgent.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cnn_suite.dir/build.make CMakeFiles/cnn_suite.dir/DQNAgent.cpp.i
-.PHONY : DQNAgent.cpp.i
-
-DQNAgent.s: DQNAgent.cpp.s
-.PHONY : DQNAgent.s
-
-# target to generate assembly for a file
-DQNAgent.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cnn_suite.dir/build.make CMakeFiles/cnn_suite.dir/DQNAgent.cpp.s
-.PHONY : DQNAgent.cpp.s
-
-main.o: main.cpp.o
-.PHONY : main.o
-
-# target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cnn_suite.dir/build.make CMakeFiles/cnn_suite.dir/main.cpp.o
-.PHONY : main.cpp.o
-
-main.i: main.cpp.i
-.PHONY : main.i
-
-# target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cnn_suite.dir/build.make CMakeFiles/cnn_suite.dir/main.cpp.i
-.PHONY : main.cpp.i
-
-main.s: main.cpp.s
-.PHONY : main.s
-
-# target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cnn_suite.dir/build.make CMakeFiles/cnn_suite.dir/main.cpp.s
-.PHONY : main.cpp.s
 
 # Help Target
 help:
@@ -234,13 +199,8 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... cnn_lib"
 	@echo "... cnn_suite"
-	@echo "... DQNAgent.o"
-	@echo "... DQNAgent.i"
-	@echo "... DQNAgent.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
 .PHONY : help
 
 
