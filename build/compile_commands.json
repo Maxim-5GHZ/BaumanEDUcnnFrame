@@ -1,0 +1,14 @@
+[
+{
+  "directory": "/home/maxim/Рабочий стол/CNN/BaumanEDUcnnFrame/build",
+  "command": "/usr/bin/clang++-18  -I\"/home/maxim/Рабочий стол/CNN/BaumanEDUcnnFrame\" -g -std=c++17 -Wall -Wextra -Wpedantic -o CMakeFiles/cnn_suite.dir/main.cpp.o -c \"/home/maxim/Рабочий стол/CNN/BaumanEDUcnnFrame/main.cpp\"",
+  "file": "/home/maxim/Рабочий стол/CNN/BaumanEDUcnnFrame/main.cpp",
+  "output": "CMakeFiles/cnn_suite.dir/main.cpp.o"
+},
+{
+  "directory": "/home/maxim/Рабочий стол/CNN/BaumanEDUcnnFrame/build",
+  "command": "/usr/bin/clang++-18  -I\"/home/maxim/Рабочий стол/CNN/BaumanEDUcnnFrame\" -g -std=c++17 -Wall -Wextra -Wpedantic -o CMakeFiles/cnn_suite.dir/DQNAgent.cpp.o -c \"/home/maxim/Рабочий стол/CNN/BaumanEDUcnnFrame/DQNAgent.cpp\"",
+  "file": "/home/maxim/Рабочий стол/CNN/BaumanEDUcnnFrame/DQNAgent.cpp",
+  "output": "CMakeFiles/cnn_suite.dir/DQNAgent.cpp.o"
+}
+]

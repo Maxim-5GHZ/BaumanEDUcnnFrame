@@ -18,33 +18,26 @@ else()
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
-# Collect top-level .cpp sources in the project root only (do NOT recurse into the build directory)
-# Recursing caused CMake-generated compiler-id files in the build tree to be picked up and
-# that introduced a second `main` (linker error). Use a non-recursive glob so only project
-# source files in the repository root are used. If you keep sources in subfolders, add
-# explicit lists or separate targets per directory.
-file(GLOB SRC_FILES "${PROJECT_SOURCE_DIR}/*.cpp")
+# --- Dependencies ---
+find_package(Threads REQUIRED)
+find_package(Curses REQUIRED)
 
-# If learnCNN.cpp is present, prefer to include it; otherwise SRC_FILES will contain all .cpp
-if(NOT SRC_FILES)
-  message(FATAL_ERROR "No .cpp source files found in project. Add source files or adjust CMakeLists.txt.")
-endif()
+# --- Header files for include directories ---
+# All headers are in the project root
+include_directories(${PROJECT_SOURCE_DIR})
 
-add_executable(learnCNN ${SRC_FILES})
 
-# Make headers available (project root)
-target_include_directories(learnCNN PRIVATE "${PROJECT_SOURCE_DIR}")
+# --- Main Application Target ---
+add_executable(cnn_suite main.cpp DQNAgent.cpp)
 
-# Link pthread on Unix if needed
-if(UNIX)
-  find_package(Threads REQUIRED)
-  target_link_libraries(learnCNN PRIVATE Threads::Threads)
-endif()
+# Link against pthreads and ncurses
+target_link_libraries(cnn_suite PRIVATE Threads::Threads ${CURSES_LIBRARIES})
 
 # Installation
-install(TARGETS learnCNN RUNTIME DESTINATION bin)
+install(TARGETS cnn_suite RUNTIME DESTINATION bin)
 
-# Helpful message
+
+# --- Helpful messages ---
 message(STATUS "Project: ${PROJECT_NAME}")
-message(STATUS "Sources: ${SRC_FILES}")
 message(STATUS "Build type: ${CMAKE_BUILD_TYPE}")
+message(STATUS "Found Curses (ncurses) library: ${CURSES_LIBRARIES}")
