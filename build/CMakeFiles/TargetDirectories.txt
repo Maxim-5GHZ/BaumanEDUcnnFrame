@@ -1,0 +1,7 @@
+/home/maxim/Рабочий стол/CNN/BaumanEDUcnnFrame/build/CMakeFiles/learnCNN.dir
+/home/maxim/Рабочий стол/CNN/BaumanEDUcnnFrame/build/CMakeFiles/edit_cache.dir
+/home/maxim/Рабочий стол/CNN/BaumanEDUcnnFrame/build/CMakeFiles/rebuild_cache.dir
+/home/maxim/Рабочий стол/CNN/BaumanEDUcnnFrame/build/CMakeFiles/list_install_components.dir
+/home/maxim/Рабочий стол/CNN/BaumanEDUcnnFrame/build/CMakeFiles/install.dir
+/home/maxim/Рабочий стол/CNN/BaumanEDUcnnFrame/build/CMakeFiles/install/local.dir
+/home/maxim/Рабочий стол/CNN/BaumanEDUcnnFrame/build/CMakeFiles/install/strip.dir

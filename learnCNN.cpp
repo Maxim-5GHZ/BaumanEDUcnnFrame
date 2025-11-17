@@ -13,6 +13,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <chrono> 
 
 void train_mnist() {
     std::cout << "\n--- MNIST Training Demo ---\n" << std::endl;
@@ -59,8 +60,18 @@ void train_mnist() {
     int batch_size = 64;
 
     std::cout << "Starting training..." << std::endl;
+
+    
+    auto start_time = std::chrono::high_resolution_clock::now();
+
     trainer.fit(X_train_full, y_train_full, X_val, y_val, epochs, batch_size);
+
+    auto end_time = std::chrono::high_resolution_clock::now();
+    auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time);
+
     std::cout << "\n--- Training Finished ---" << std::endl;
+    std::cout << "Total training time: " << duration.count() << " ms ("
+              << static_cast<double>(duration.count()) / 1000.0 << " seconds)" << std::endl;
 
     try {
         model.save_model("mnist_cnn_model.bin");

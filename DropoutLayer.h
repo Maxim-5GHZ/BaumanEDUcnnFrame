@@ -1,4 +1,3 @@
-// === DropoutLayer.h (ИСПРАВЛЕННАЯ ВЕРСИЯ) ===
 
 #pragma once
 #include "Layer.h"
@@ -18,13 +17,6 @@ public:
     DropoutLayer(float dropout_rate = 0.5) : rate(dropout_rate) {
         generator.seed(std::chrono::system_clock::now().time_since_epoch().count());
     }
-    
-    // ИСПРАВЛЕНО: Удален неоднозначный конструктор по умолчанию.
-    // Конструктор выше с параметром по умолчанию (dropout_rate = 0.5)
-    // уже служит конструктором по умолчанию.
-    // DropoutLayer() = default;  <-- ЭТА СТРОКА УДАЛЕНА
-
-    // УЛУЧШЕНО: Реализация виртуальных методов базового класса
     void train() override { is_training = true; }
     void eval() override { is_training = false; }
 
