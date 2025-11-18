@@ -1,0 +1,20 @@
+[
+{
+  "directory": "/home/maxim/Рабочий стол/CNN/BaumanEDUcnnFrame/build",
+  "command": "/usr/bin/clang++-18  -I\"/home/maxim/Рабочий стол/CNN/BaumanEDUcnnFrame/demonstration model\" -I\"/home/maxim/Рабочий стол/CNN/BaumanEDUcnnFrame/edunet\" -g -std=gnu++17 -o CMakeFiles/cnn_demo.dir/demonstration_model/main.cpp.o -c \"/home/maxim/Рабочий стол/CNN/BaumanEDUcnnFrame/demonstration model/main.cpp\"",
+  "file": "/home/maxim/Рабочий стол/CNN/BaumanEDUcnnFrame/demonstration model/main.cpp",
+  "output": "CMakeFiles/cnn_demo.dir/demonstration_model/main.cpp.o"
+},
+{
+  "directory": "/home/maxim/Рабочий стол/CNN/BaumanEDUcnnFrame/build",
+  "command": "/usr/bin/clang++-18  -I\"/home/maxim/Рабочий стол/CNN/BaumanEDUcnnFrame/demonstration model\" -I\"/home/maxim/Рабочий стол/CNN/BaumanEDUcnnFrame/edunet\" -g -std=gnu++17 -o CMakeFiles/cnn_demo.dir/demonstration_model/mnist_app.cpp.o -c \"/home/maxim/Рабочий стол/CNN/BaumanEDUcnnFrame/demonstration model/mnist_app.cpp\"",
+  "file": "/home/maxim/Рабочий стол/CNN/BaumanEDUcnnFrame/demonstration model/mnist_app.cpp",
+  "output": "CMakeFiles/cnn_demo.dir/demonstration_model/mnist_app.cpp.o"
+},
+{
+  "directory": "/home/maxim/Рабочий стол/CNN/BaumanEDUcnnFrame/build/edunet",
+  "command": "/usr/bin/clang++-18  -I\"/home/maxim/Рабочий стол/CNN/BaumanEDUcnnFrame/edunet\" -g -std=gnu++17 -o CMakeFiles/cnn_lib.dir/DQNAgent.cpp.o -c \"/home/maxim/Рабочий стол/CNN/BaumanEDUcnnFrame/edunet/DQNAgent.cpp\"",
+  "file": "/home/maxim/Рабочий стол/CNN/BaumanEDUcnnFrame/edunet/DQNAgent.cpp",
+  "output": "edunet/CMakeFiles/cnn_lib.dir/DQNAgent.cpp.o"
+}
+]

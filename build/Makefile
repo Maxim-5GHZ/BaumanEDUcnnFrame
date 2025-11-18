@@ -65,6 +65,16 @@ CMAKE_BINARY_DIR = "/home/maxim/Рабочий стол/CNN/BaumanEDUcnnFrame/bu
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "No interactive CMake dialog available..."
@@ -162,6 +172,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named cnn_demo
+
+# Build rule for target.
+cnn_demo: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cnn_demo
+.PHONY : cnn_demo
+
+# fast build rule for target.
+cnn_demo/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cnn_demo.dir/build.make CMakeFiles/cnn_demo.dir/build
+.PHONY : cnn_demo/fast
+
+#=============================================================================
 # Target rules for targets named cnn_lib
 
 # Build rule for target.
@@ -171,21 +194,56 @@ cnn_lib: cmake_check_build_system
 
 # fast build rule for target.
 cnn_lib/fast:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/cnn_lib.dir/build.make src/CMakeFiles/cnn_lib.dir/build
+	$(MAKE) $(MAKESILENT) -f edunet/CMakeFiles/cnn_lib.dir/build.make edunet/CMakeFiles/cnn_lib.dir/build
 .PHONY : cnn_lib/fast
 
-#=============================================================================
-# Target rules for targets named cnn_suite
+demonstration_model/main.o: demonstration_model/main.cpp.o
+.PHONY : demonstration_model/main.o
 
-# Build rule for target.
-cnn_suite: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cnn_suite
-.PHONY : cnn_suite
+# target to build an object file
+demonstration_model/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cnn_demo.dir/build.make CMakeFiles/cnn_demo.dir/demonstration_model/main.cpp.o
+.PHONY : demonstration_model/main.cpp.o
 
-# fast build rule for target.
-cnn_suite/fast:
-	$(MAKE) $(MAKESILENT) -f app/CMakeFiles/cnn_suite.dir/build.make app/CMakeFiles/cnn_suite.dir/build
-.PHONY : cnn_suite/fast
+demonstration_model/main.i: demonstration_model/main.cpp.i
+.PHONY : demonstration_model/main.i
+
+# target to preprocess a source file
+demonstration_model/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cnn_demo.dir/build.make CMakeFiles/cnn_demo.dir/demonstration_model/main.cpp.i
+.PHONY : demonstration_model/main.cpp.i
+
+demonstration_model/main.s: demonstration_model/main.cpp.s
+.PHONY : demonstration_model/main.s
+
+# target to generate assembly for a file
+demonstration_model/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cnn_demo.dir/build.make CMakeFiles/cnn_demo.dir/demonstration_model/main.cpp.s
+.PHONY : demonstration_model/main.cpp.s
+
+demonstration_model/mnist_app.o: demonstration_model/mnist_app.cpp.o
+.PHONY : demonstration_model/mnist_app.o
+
+# target to build an object file
+demonstration_model/mnist_app.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cnn_demo.dir/build.make CMakeFiles/cnn_demo.dir/demonstration_model/mnist_app.cpp.o
+.PHONY : demonstration_model/mnist_app.cpp.o
+
+demonstration_model/mnist_app.i: demonstration_model/mnist_app.cpp.i
+.PHONY : demonstration_model/mnist_app.i
+
+# target to preprocess a source file
+demonstration_model/mnist_app.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cnn_demo.dir/build.make CMakeFiles/cnn_demo.dir/demonstration_model/mnist_app.cpp.i
+.PHONY : demonstration_model/mnist_app.cpp.i
+
+demonstration_model/mnist_app.s: demonstration_model/mnist_app.cpp.s
+.PHONY : demonstration_model/mnist_app.s
+
+# target to generate assembly for a file
+demonstration_model/mnist_app.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cnn_demo.dir/build.make CMakeFiles/cnn_demo.dir/demonstration_model/mnist_app.cpp.s
+.PHONY : demonstration_model/mnist_app.cpp.s
 
 # Help Target
 help:
@@ -199,8 +257,15 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... test"
+	@echo "... cnn_demo"
 	@echo "... cnn_lib"
-	@echo "... cnn_suite"
+	@echo "... demonstration_model/main.o"
+	@echo "... demonstration_model/main.i"
+	@echo "... demonstration_model/main.s"
+	@echo "... demonstration_model/mnist_app.o"
+	@echo "... demonstration_model/mnist_app.i"
+	@echo "... demonstration_model/mnist_app.s"
 .PHONY : help
 
 

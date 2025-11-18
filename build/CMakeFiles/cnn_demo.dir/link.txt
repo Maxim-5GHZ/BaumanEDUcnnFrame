@@ -1,0 +1,1 @@
+/usr/bin/clang++-18 -g CMakeFiles/cnn_demo.dir/demonstration_model/main.cpp.o CMakeFiles/cnn_demo.dir/demonstration_model/mnist_app.cpp.o -o cnn_demo  edunet/libcnn_lib.a -lcurses /usr/lib/x86_64-linux-gnu/libform.so 

@@ -63,101 +63,85 @@ CMAKE_BINARY_DIR = "/home/maxim/Рабочий стол/CNN/BaumanEDUcnnFrame/bu
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: src/all
-all: app/all
+all: CMakeFiles/cnn_demo.dir/all
+all: edunet/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall: src/preinstall
-preinstall: app/preinstall
+preinstall: edunet/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: src/clean
-clean: app/clean
+clean: CMakeFiles/cnn_demo.dir/clean
+clean: edunet/clean
 .PHONY : clean
 
 #=============================================================================
-# Directory level rules for directory app
+# Directory level rules for directory edunet
 
 # Recursive "all" directory target.
-app/all: app/CMakeFiles/cnn_suite.dir/all
-.PHONY : app/all
+edunet/all: edunet/CMakeFiles/cnn_lib.dir/all
+.PHONY : edunet/all
 
 # Recursive "preinstall" directory target.
-app/preinstall:
-.PHONY : app/preinstall
+edunet/preinstall:
+.PHONY : edunet/preinstall
 
 # Recursive "clean" directory target.
-app/clean: app/CMakeFiles/cnn_suite.dir/clean
-.PHONY : app/clean
+edunet/clean: edunet/CMakeFiles/cnn_lib.dir/clean
+.PHONY : edunet/clean
 
 #=============================================================================
-# Directory level rules for directory src
-
-# Recursive "all" directory target.
-src/all: src/CMakeFiles/cnn_lib.dir/all
-.PHONY : src/all
-
-# Recursive "preinstall" directory target.
-src/preinstall:
-.PHONY : src/preinstall
-
-# Recursive "clean" directory target.
-src/clean: src/CMakeFiles/cnn_lib.dir/clean
-.PHONY : src/clean
-
-#=============================================================================
-# Target rules for target src/CMakeFiles/cnn_lib.dir
+# Target rules for target CMakeFiles/cnn_demo.dir
 
 # All Build rule for target.
-src/CMakeFiles/cnn_lib.dir/all:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/cnn_lib.dir/build.make src/CMakeFiles/cnn_lib.dir/depend
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/cnn_lib.dir/build.make src/CMakeFiles/cnn_lib.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/maxim/Рабочий стол/CNN/BaumanEDUcnnFrame/build/CMakeFiles" --progress-num=1,2 "Built target cnn_lib"
-.PHONY : src/CMakeFiles/cnn_lib.dir/all
+CMakeFiles/cnn_demo.dir/all: edunet/CMakeFiles/cnn_lib.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cnn_demo.dir/build.make CMakeFiles/cnn_demo.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cnn_demo.dir/build.make CMakeFiles/cnn_demo.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/maxim/Рабочий стол/CNN/BaumanEDUcnnFrame/build/CMakeFiles" --progress-num=1,2,3 "Built target cnn_demo"
+.PHONY : CMakeFiles/cnn_demo.dir/all
 
 # Build rule for subdir invocation for target.
-src/CMakeFiles/cnn_lib.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/maxim/Рабочий стол/CNN/BaumanEDUcnnFrame/build/CMakeFiles" 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/cnn_lib.dir/all
+CMakeFiles/cnn_demo.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/maxim/Рабочий стол/CNN/BaumanEDUcnnFrame/build/CMakeFiles" 5
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/cnn_demo.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "/home/maxim/Рабочий стол/CNN/BaumanEDUcnnFrame/build/CMakeFiles" 0
-.PHONY : src/CMakeFiles/cnn_lib.dir/rule
+.PHONY : CMakeFiles/cnn_demo.dir/rule
 
 # Convenience name for target.
-cnn_lib: src/CMakeFiles/cnn_lib.dir/rule
+cnn_demo: CMakeFiles/cnn_demo.dir/rule
+.PHONY : cnn_demo
+
+# clean rule for target.
+CMakeFiles/cnn_demo.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cnn_demo.dir/build.make CMakeFiles/cnn_demo.dir/clean
+.PHONY : CMakeFiles/cnn_demo.dir/clean
+
+#=============================================================================
+# Target rules for target edunet/CMakeFiles/cnn_lib.dir
+
+# All Build rule for target.
+edunet/CMakeFiles/cnn_lib.dir/all:
+	$(MAKE) $(MAKESILENT) -f edunet/CMakeFiles/cnn_lib.dir/build.make edunet/CMakeFiles/cnn_lib.dir/depend
+	$(MAKE) $(MAKESILENT) -f edunet/CMakeFiles/cnn_lib.dir/build.make edunet/CMakeFiles/cnn_lib.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/maxim/Рабочий стол/CNN/BaumanEDUcnnFrame/build/CMakeFiles" --progress-num=4,5 "Built target cnn_lib"
+.PHONY : edunet/CMakeFiles/cnn_lib.dir/all
+
+# Build rule for subdir invocation for target.
+edunet/CMakeFiles/cnn_lib.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/maxim/Рабочий стол/CNN/BaumanEDUcnnFrame/build/CMakeFiles" 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 edunet/CMakeFiles/cnn_lib.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/maxim/Рабочий стол/CNN/BaumanEDUcnnFrame/build/CMakeFiles" 0
+.PHONY : edunet/CMakeFiles/cnn_lib.dir/rule
+
+# Convenience name for target.
+cnn_lib: edunet/CMakeFiles/cnn_lib.dir/rule
 .PHONY : cnn_lib
 
 # clean rule for target.
-src/CMakeFiles/cnn_lib.dir/clean:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/cnn_lib.dir/build.make src/CMakeFiles/cnn_lib.dir/clean
-.PHONY : src/CMakeFiles/cnn_lib.dir/clean
-
-#=============================================================================
-# Target rules for target app/CMakeFiles/cnn_suite.dir
-
-# All Build rule for target.
-app/CMakeFiles/cnn_suite.dir/all: src/CMakeFiles/cnn_lib.dir/all
-	$(MAKE) $(MAKESILENT) -f app/CMakeFiles/cnn_suite.dir/build.make app/CMakeFiles/cnn_suite.dir/depend
-	$(MAKE) $(MAKESILENT) -f app/CMakeFiles/cnn_suite.dir/build.make app/CMakeFiles/cnn_suite.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/maxim/Рабочий стол/CNN/BaumanEDUcnnFrame/build/CMakeFiles" --progress-num=3,4,5 "Built target cnn_suite"
-.PHONY : app/CMakeFiles/cnn_suite.dir/all
-
-# Build rule for subdir invocation for target.
-app/CMakeFiles/cnn_suite.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/maxim/Рабочий стол/CNN/BaumanEDUcnnFrame/build/CMakeFiles" 5
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app/CMakeFiles/cnn_suite.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/maxim/Рабочий стол/CNN/BaumanEDUcnnFrame/build/CMakeFiles" 0
-.PHONY : app/CMakeFiles/cnn_suite.dir/rule
-
-# Convenience name for target.
-cnn_suite: app/CMakeFiles/cnn_suite.dir/rule
-.PHONY : cnn_suite
-
-# clean rule for target.
-app/CMakeFiles/cnn_suite.dir/clean:
-	$(MAKE) $(MAKESILENT) -f app/CMakeFiles/cnn_suite.dir/build.make app/CMakeFiles/cnn_suite.dir/clean
-.PHONY : app/CMakeFiles/cnn_suite.dir/clean
+edunet/CMakeFiles/cnn_lib.dir/clean:
+	$(MAKE) $(MAKESILENT) -f edunet/CMakeFiles/cnn_lib.dir/build.make edunet/CMakeFiles/cnn_lib.dir/clean
+.PHONY : edunet/CMakeFiles/cnn_lib.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

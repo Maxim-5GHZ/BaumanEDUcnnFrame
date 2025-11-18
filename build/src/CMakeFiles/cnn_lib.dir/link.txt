@@ -1,2 +1,0 @@
-/usr/bin/ar qc libcnn_lib.a CMakeFiles/cnn_lib.dir/DQNAgent.cpp.o
-/usr/bin/ranlib libcnn_lib.a
