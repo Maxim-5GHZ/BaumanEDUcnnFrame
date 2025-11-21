@@ -9,6 +9,7 @@
 #include <cmath>
 #include <deque>
 #include <limits>
+#include <filesystem>
 #include <libgen.h> // For dirname
 #include <unistd.h> // For readlink
 #include <linux/limits.h> // For PATH_MAX
@@ -113,10 +114,10 @@ void run_snake_training() {
     const int ACTION_SIZE = 3;
 
     SnakeConfig config;
-    config.width = 10;
-    config.height = 10;
-    config.initial_length = 3;
-    config.max_steps_without_food = 200;
+    config.width = 30;
+    config.height = 30;
+    config.initial_length = 5;
+    config.max_steps_without_food = 100;
 
     SnakeGame game(config);
     DQNAgent agent(STATE_SIZE, ACTION_SIZE);
@@ -187,6 +188,13 @@ void run_snake_training() {
     }
 
     std::cout << "\n--- Training Finished ---" << std::endl;
+
+    // Create directory if it doesn't exist
+    std::string weights_dir = "weights";
+    if (!std::filesystem::exists(weights_dir)) {
+        std::filesystem::create_directories(weights_dir);
+    }
+
     agent.save("weights/snake-dqn-final.bin");
 }
 
@@ -198,8 +206,8 @@ void run_snake_visualization() {
     const int ACTION_SIZE = 3;
 
     SnakeConfig config;
-    config.width = 10;
-    config.height = 10;
+    config.width = 30;
+    config.height = 30;
     config.initial_length = 3;
 
     SnakeGame game(config);
